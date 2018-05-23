@@ -18,4 +18,8 @@ export default defineMessages({
     id: 'no id',
     defaultMessage: 'Craigslist',
   },
+  reddit: {
+    id: 'no id',
+    defaultMessage: 'reddit',
+  },
 });

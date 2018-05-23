@@ -18,6 +18,7 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 
 import Craigslist from 'containers/Craigslist/Loadable';
+import Reddit from 'containers/Reddit/Loadable';
 
 const AppWrapper = styled.div`
   max-width: calc(768px + 16px * 2);
@@ -41,6 +42,7 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route path="/features" component={FeaturePage} />
+        <Route path="/reddit" component={Reddit} />
         <Route path="/craigslist" component={Craigslist} />
         <Route path="" component={NotFoundPage} />
       </Switch>

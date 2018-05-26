@@ -5,18 +5,21 @@ import Ul from './Ul';
 import Wrapper from './Wrapper';
 
 function List(props) {
+  // console.log('props ==>', props);
+  // console.log('props.component ==>', props.component);
   const ComponentToRender = props.component;
   let content = (<div></div>);
 
   // If we have items, render them
   if (props.items) {
-    content = props.items.map((item) => (
-      <ComponentToRender key={`item-${item.id}`} item={item} />
+    content = props.items.map((item, index) => (
+      <ComponentToRender key={`item-${index}-${item.id}`} item={item} />
     ));
   } else {
     // Otherwise render a single component
-    content = (<ComponentToRender />);
+    // content = (<ComponentToRender />);
   }
+  console.log('content ==>', content);
 
   return (
     <Wrapper>

@@ -8,13 +8,12 @@ import { createStructuredSelector } from 'reselect';
 import axios from 'axios';
 
 import List from '../../components/List';
-import RedditListItem from '../../components/RedditListItem';
+import CardList from '../../components/CardList';
 
 
 const redditModel = (array) => {
   return array.data.map((rawData) => {
-    let parsedData = rawData;
-    const { id, title, thumbnail, subreddit_name_prefixed } = parsedData;
+    const { id, title, thumbnail, subreddit_name_prefixed } = rawData;
     const data = {
       id,
       title,
@@ -36,15 +35,14 @@ export default class Reddit extends React.PureComponent { // eslint-disable-line
   getAxios() {
     axios.get('http://localhost:3002/reddit')
       .then((response) => {
-        console.log('response ==>', response);
         const data = redditModel(response);
         this.setState({ items: data });
-        console.log('this.state ==>', this.state);
       });
   }
   render() {
     return (
-      <List items={this.state.items} component={RedditListItem} />
+      // <List items={this.state.items} component={CardList} />
+      <CardList items={this.state.items} />
     );
   }
 }

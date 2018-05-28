@@ -13,12 +13,13 @@ import CardList from '../../components/CardList';
 
 const redditModel = (array) => {
   return array.data.map((rawData) => {
-    const { id, title, thumbnail, subreddit_name_prefixed } = rawData;
+    const { id, title, thumbnail, subreddit_name_prefixed, url } = rawData;
     const data = {
       id,
       title,
       thumbnail,
       subreddit_name_prefixed,
+      url,
     };
     return data;
   });
@@ -35,6 +36,7 @@ export default class Reddit extends React.PureComponent { // eslint-disable-line
   getAxios() {
     axios.get('http://localhost:3002/reddit')
       .then((response) => {
+        console.log('response ==>', response);
         const data = redditModel(response);
         this.setState({ items: data });
       });

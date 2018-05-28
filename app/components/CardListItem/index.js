@@ -3,17 +3,17 @@
  */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // import Wrapper from './Wrapper';
 import './Styles.css';
 
 function CardListItem(props) {
-  const { title, subreddit_name_prefixed, thumbnail, url } = props.item;
-
+  const { title, subreddit, url } = props.item;
   return (
     <article className="card">
       <header className="card__title">
-        <p>{subreddit_name_prefixed}</p>
+        <p>{subreddit}</p>
       </header>
       <main className="card__description">
         {title}
@@ -24,5 +24,9 @@ function CardListItem(props) {
     </article>
   );
 }
+
+CardListItem.propTypes = {
+  item: PropTypes.object,
+};
 
 export default CardListItem;

@@ -8,16 +8,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { FormattedNumber } from 'react-intl';
+// import { FormattedNumber } from 'react-intl';
 
-import Wrapper from './Wrapper';
+// import Wrapper from './Wrapper';
 import { makeSelectCurrentUser } from 'containers/App/selectors';
-import ListItem from 'components/ListItem';
+import ListItem from '../../components/ListItem';
 
 export class RedditListItem extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     const item = this.props.item;
-    let nameprefix = '';
+    // let nameprefix = '';
 
     // If the repository is owned by a different person than we got the data for
     // it's a fork and we should show the name of the owner
